@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:sedhom_redesgin_avrdude/constants/constant.dart';
 import 'package:sedhom_redesgin_avrdude/containers/Basic_container.dart';
 import 'package:sedhom_redesgin_avrdude/Resbonseive/screen_area.dart';
@@ -13,7 +14,9 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: APPColors.app_background,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          // sedhom avrdude text
           Center(
             child: Text(
               "SEDHOM AVRDUDESS",
@@ -24,12 +27,111 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
+          // 1 and 2 containers
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [BasicContainer(), BasicContainer()],
+          ),
+          // 3 and 4 containers
+          Gap(10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [BasicContainer(), BasicContainer()],
+          ),
+          // 5 and 6 containers
+          Gap(10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [BasicContainer(), BasicContainer()],
+          ),
+          // buttons
+          Gap(10),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              BasicContainer(width: ScreenArea.Width * 0.4, height:ScreenArea.Height *0.5),
-              BasicContainer(width: ScreenArea.Width * 0.4, height: ScreenArea.Height *0.5),
+              SecondContainer(
+                title: "Stop",
+                titleColor: APPColors.stop_word_color,
+              ),
+              SecondContainer(
+                title: "Program !",
+                titleColor: APPColors.Blue_color_basic,
+              ),
             ],
+          ),
+          // commands argument
+          Gap(5),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              // Gap(4),
+              Text(
+                "Additional command line arguments",
+                style: TextStyle(
+                  color: APPColors.container_title,
+                  fontSize: 16,
+                ),
+              ),
+              Gap(10),
+              Container(
+                width: ScreenArea.Width * 0.63,
+                height: ScreenArea.Height * 0.05,
+                decoration: BoxDecoration(
+                  color: APPColors.Termianl_background,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 2,
+                  ),
+                  child: Text(
+                    " > -E -F",
+                    style: TextStyle(
+                      color: APPColors.color_green,
+                      fontSize: 20,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          // commands
+          Gap(5),
+          Container(
+            width: ScreenArea.Width * 0.95,
+            height: ScreenArea.Height * 0.05,
+            decoration: BoxDecoration(
+              color: APPColors.Termianl_background,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10.0,
+                vertical: 5,
+              ),
+              child: Text(
+                "avrdude -m atm328p - c asp -p USB -E -F",
+                style: TextStyle(color: APPColors.command_color_pathed_by_cmd),
+              ),
+            ),
+          ),
+          // terminal
+          Gap(5),
+          Container(
+            width: ScreenArea.Width * 0.95,
+            height: ScreenArea.Height * 0.13,
+            decoration: BoxDecoration(
+              color: APPColors.Termianl_background,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "SEDHOM_AVRDUDE.exe run \n avrdude -m atm328p \n uploading Done >>>",
+                style: TextStyle(color: APPColors.color_green),
+              ),
+            ),
           ),
         ],
       ),

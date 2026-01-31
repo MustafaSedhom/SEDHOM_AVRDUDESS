@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-class APPColors
-{
+class APPColors {
   //ignore: constant_identifier_names
   static const Color Blue_color_basic = Color(0xFF0ADAFF);
   //ignore: constant_identifier_names
@@ -9,7 +8,7 @@ class APPColors
   //ignore: constant_identifier_names
   static const Color color_green = Color(0xFF0EFF01);
   //ignore: constant_identifier_names
-  static const Color container_title = Colors.white10;
+  static const Color container_title = Colors.white;
   //ignore: constant_identifier_names
   static const Color container_background = Color(0xFF514D4D);
   //ignore: constant_identifier_names
@@ -22,5 +21,6 @@ class APPColors
   static const Color stop_word_color = Color(0xFFFF0A22);
   //ignore: constant_identifier_names
   static const Color command_color_pathed_by_cmd = Color(0xFF00D7FD);
-
+  //ignore: constant_identifier_names
+  static const Color Termianl_background = Color(0xFF181616);
 }
