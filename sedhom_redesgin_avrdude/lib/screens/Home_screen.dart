@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sedhom_redesgin_avrdude/constants/constant.dart';
 import 'package:sedhom_redesgin_avrdude/containers/Basic_container.dart';
 import 'package:sedhom_redesgin_avrdude/Resbonseive/screen_area.dart';
-import 'package:sedhom_redesgin_avrdude/Avr_data_base/my_data.dart';
 import 'package:sedhom_redesgin_avrdude/widgets/eeprom_widget.dart';
 import 'package:sedhom_redesgin_avrdude/widgets/flash_widget.dart';
 import 'package:sedhom_redesgin_avrdude/widgets/fuses_and_lock_bits_widget.dart';
@@ -20,14 +19,37 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final TextEditingController _controller = TextEditingController(
-    text: Additional_command.join(" "),
-  );
+  final TextEditingController _controller = TextEditingController();
+  final ScrollController _scrollController = ScrollController();
+
+  List<String> additional_commands_from_user = [];
+  List<String> commandes_passed_on_terminal = ["avrdude", "-m atmega328p"];
+  List<String> total_commands = [""];
+  List<String> Termianl_output = [
+    "Sedhom avrdude started...",
+    "Connecting to programmer...",
+    "Reading device signature...",
+  ];
 
   @override
   void dispose() {
     super.dispose();
     _controller.dispose();
+  }
+
+  void addOutput(String text) {
+    setState(() {
+      Termianl_output.add(text);
+    });
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!_scrollController.hasClients) return;
+
+      _scrollController.animateTo(
+        _scrollController.position.maxScrollExtent,
+        duration: const Duration(milliseconds: 200),
+        curve: Curves.easeOut,
+      );
+    });
   }
 
   @override
@@ -48,13 +70,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Text(
                   "SEDHOM AVRDUDESS",
                   style: GoogleFonts.abrilFatface(
-                    fontSize: 20,
+                    fontSize: 40,
                     // fontWeight: FontWeight.bold,
                     color: APPColors.Blue_color_basic,
                   ),
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
+              Gap(10),
               Divider(
                 color: APPColors.Divider_color,
                 thickness: 2,
@@ -110,10 +133,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     SecondContainer(
                       title: "Stop",
                       titleColor: APPColors.stop_word_color,
+                      onTap: () {
+                        addOutput("Stop program");
+                      },
                     ),
                     SecondContainer(
                       title: "Program !",
                       titleColor: APPColors.Blue_color_basic,
+                      onTap: () {
+                        addOutput("run program and burn it on CPU");
+                        addOutput(total_commands.join(" "));
+                      },
                     ),
                   ],
                 ),
@@ -128,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
               // aditiona command argument
               Gap(10),
               Column(
-                // crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -149,22 +179,45 @@ class _HomeScreenState extends State<HomeScreen> {
                         vertical: 0,
                       ),
                       width: ScreenArea.Width * 0.95,
-                      height: 35,
+                      height: 50,
                       decoration: BoxDecoration(
                         color: APPColors.Termianl_background,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: TextField(
                         controller: _controller,
+                        onSubmitted: (value) {
+                          setState(() {
+                            // addOutput(total_commands.join(" "));
+                            total_commands =
+                                commandes_passed_on_terminal +
+                                additional_commands_from_user;
+                          });
+                        },
+                        onChanged: (value) {
+                          setState(() {
+                            additional_commands_from_user = value.split(" ");
+                            total_commands =
+                                commandes_passed_on_terminal +
+                                additional_commands_from_user;
+                          });
+                        },
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          // hintText: "Enter command",
+                          hintText: "additional commands",
+                          hintStyle: GoogleFonts.aDLaMDisplay(
+                            fontSize: 20,
+                            color: APPColors.color_green.withOpacity(0.5),
+                          ),
                         ),
                         style: GoogleFonts.aDLaMDisplay(
-                          fontSize: 15,
+                          fontSize: 20,
                           color: APPColors.color_green,
                         ),
-                        showCursor: false,
+                        showCursor: true,
+                        cursorWidth: 3.5,
+                        cursorRadius: Radius.circular(20),
+                        cursorColor: APPColors.color_green,
                       ),
                     ),
                   ),
@@ -190,7 +243,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Center(
                     child: Container(
                       width: ScreenArea.Width * 0.95,
-                      height: 35,
+                      height: 50,
                       decoration: BoxDecoration(
                         color: APPColors.Termianl_background,
                         borderRadius: BorderRadius.circular(10),
@@ -201,9 +254,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           vertical: 5,
                         ),
                         child: Text(
-                          total_commands.join(" "),
-                          style: TextStyle(
+                          "${commandes_passed_on_terminal.join(" ")} ${additional_commands_from_user.join(" ")}",
+                          // total_commands.join(" "),
+                          style: GoogleFonts.aDLaMDisplay(
                             color: APPColors.command_color_pathed_by_cmd,
+                            fontSize: 25,
                           ),
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -239,19 +294,62 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: SingleChildScrollView(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                Output_commands.join("\n"),
-                                style: GoogleFonts.aDLaMDisplay(
-                                  color: APPColors.color_green,
-                                ),
-                                overflow: TextOverflow.ellipsis,
+                        child: Stack(
+                          children: [
+                            SingleChildScrollView(
+                              controller: _scrollController,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text.rich(
+                                    TextSpan(
+                                      children: Termianl_output.map(
+                                        (line) => [
+                                          const TextSpan(
+                                            text: "\$\$\$?  ",
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                          TextSpan(
+                                            text: "$line\n",
+                                            style: GoogleFonts.aDLaMDisplay(
+                                              color: APPColors.color_green,
+                                            ),
+                                          ),
+                                        ],
+                                      ).expand((element) => element).toList(),
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
+                            ),
+                            Positioned(
+                              right: 0,
+                              top: 0,
+                              child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    Termianl_output = [];
+                                  });
+                                },
+                                child: Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: APPColors.container_title,
+                                  ),
+                                  child: const Center(
+                                    child: Icon(
+                                      Icons.cleaning_services_outlined,
+                                      color: APPColors.stop_word_color,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
