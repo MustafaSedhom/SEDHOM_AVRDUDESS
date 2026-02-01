@@ -11,7 +11,7 @@ class BasicContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: ScreenArea.Width * 0.46,
-      height: ScreenArea.Height * 0.2,
+      height: ScreenArea.Height * 0.5,
       decoration: BoxDecoration(
         color: APPColors.container_background,
         borderRadius: BorderRadius.circular(20),
@@ -38,7 +38,7 @@ class SecondContainer extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: ScreenArea.Width * 0.46,
-        height: ScreenArea.Height * 0.05,
+        height: ScreenArea.Height * 0.1,
         decoration: BoxDecoration(
           color: APPColors.input_field_color_in_container,
           borderRadius: BorderRadius.circular(10),
