@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sedhom_redesgin_avrdude/Resbonseive/screen_area.dart';
 import 'package:sedhom_redesgin_avrdude/constants/constant.dart';
 
@@ -11,7 +12,7 @@ class BasicContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: ScreenArea.Width * 0.46,
-      height: ScreenArea.Height * 0.5,
+      height: 350,
       decoration: BoxDecoration(
         color: APPColors.container_background,
         borderRadius: BorderRadius.circular(20),
@@ -38,18 +39,18 @@ class SecondContainer extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: ScreenArea.Width * 0.46,
-        height: ScreenArea.Height * 0.1,
+        height: 70,
         decoration: BoxDecoration(
           color: APPColors.input_field_color_in_container,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Center(
-          child: Text(
-            title,
-            style: TextStyle(
-              color: titleColor,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+          child: Expanded(
+            child: Text(
+              title,
+              style: GoogleFonts.alfaSlabOne(color: titleColor, fontSize: 20),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
             ),
           ),
         ),

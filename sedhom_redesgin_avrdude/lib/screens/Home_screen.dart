@@ -1,11 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:sedhom_redesgin_avrdude/constants/constant.dart';
 import 'package:sedhom_redesgin_avrdude/containers/Basic_container.dart';
 import 'package:sedhom_redesgin_avrdude/Resbonseive/screen_area.dart';
+import 'package:sedhom_redesgin_avrdude/Avr_data_base/my_data.dart';
+import 'package:sedhom_redesgin_avrdude/widgets/eeprom_widget.dart';
+import 'package:sedhom_redesgin_avrdude/widgets/flash_widget.dart';
+import 'package:sedhom_redesgin_avrdude/widgets/fuses_and_lock_bits_widget.dart';
+import 'package:sedhom_redesgin_avrdude/widgets/mcu_widget.dart';
+import 'package:sedhom_redesgin_avrdude/widgets/options_widget.dart';
+import 'package:sedhom_redesgin_avrdude/widgets/programmer_widget.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final TextEditingController _controller = TextEditingController(
+    text: Additional_command.join(" "),
+  );
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,133 +36,231 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: APPColors.app_background,
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Gap(10),
-            // sedhom avrdude text
-            Center(
-              child: Text(
-                "SEDHOM AVRDUDESS",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: APPColors.Blue_color_basic,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Gap(10),
+              // sedhom avrdude text
+              Center(
+                child: Text(
+                  "SEDHOM AVRDUDESS",
+                  style: GoogleFonts.abrilFatface(
+                    fontSize: 20,
+                    // fontWeight: FontWeight.bold,
+                    color: APPColors.Blue_color_basic,
+                  ),
+                  overflow: TextOverflow.ellipsis,
                 ),
               ),
-            ),
-            Gap(10),
-            // 1 and 2 containers
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [BasicContainer(), BasicContainer()],
-            ),
-            // 3 and 4 containers
-            Gap(10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [BasicContainer(), BasicContainer()],
-            ),
-            // 5 and 6 containers
-            Gap(10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [BasicContainer(), BasicContainer()],
-            ),
-            // buttons
-            Gap(10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                SecondContainer(
-                  title: "Stop",
-                  titleColor: APPColors.stop_word_color,
+              Divider(
+                color: APPColors.Divider_color,
+                thickness: 2,
+                indent: 16,
+                endIndent: 16,
+              ),
+              Gap(10),
+              // 1 and 2 containers
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    BasicContainer(child: McuWidget()),
+                    BasicContainer(child: FlashWidget()),
+                  ],
                 ),
-                SecondContainer(
-                  title: "Program !",
-                  titleColor: APPColors.Blue_color_basic,
+              ),
+              // 3 and 4 containers
+              Gap(10),
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    BasicContainer(child: ProgrammerWidget()),
+                    BasicContainer(child: EepromWidget()),
+                  ],
                 ),
-              ],
-            ),
-            // commands argument
-            Gap(10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                // Gap(4),
-                Text(
-                  "Additional command line arguments",
-                  style: TextStyle(
-                    color: APPColors.container_title,
-                    fontSize: 16,
-                  ),
+              ),
+              // 5 and 6 containers
+              Gap(10),
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    BasicContainer(child: FusesAndLockBitsWidget()),
+                    BasicContainer(child: OptionsWidget()),
+                  ],
                 ),
-                Gap(10),
-                Container(
-                  width: ScreenArea.Width * 0.63,
-                  height: ScreenArea.Height * 0.05,
-                  decoration: BoxDecoration(
-                    color: APPColors.Termianl_background,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 10,
-                      vertical: 2,
+              ),
+              Gap(10),
+              Divider(
+                color: APPColors.Divider_color,
+                thickness: 2,
+                indent: 16,
+                endIndent: 16,
+              ),
+              // buttons
+              Gap(10),
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SecondContainer(
+                      title: "Stop",
+                      titleColor: APPColors.stop_word_color,
                     ),
+                    SecondContainer(
+                      title: "Program !",
+                      titleColor: APPColors.Blue_color_basic,
+                    ),
+                  ],
+                ),
+              ),
+              Gap(10),
+              Divider(
+                color: APPColors.Divider_color,
+                thickness: 2,
+                indent: 16,
+                endIndent: 16,
+              ),
+              // aditiona command argument
+              Gap(10),
+              Column(
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Text(
-                      " > -E -F",
+                      "Additional command line arguments",
                       style: TextStyle(
-                        color: APPColors.color_green,
-                        fontSize: 20,
+                        color: APPColors.container_title,
+                        fontSize: 16,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  Gap(10),
+                  Center(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 0,
+                      ),
+                      width: ScreenArea.Width * 0.95,
+                      height: 35,
+                      decoration: BoxDecoration(
+                        color: APPColors.Termianl_background,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: TextField(
+                        controller: _controller,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          // hintText: "Enter command",
+                        ),
+                        style: GoogleFonts.aDLaMDisplay(
+                          fontSize: 15,
+                          color: APPColors.color_green,
+                        ),
+                        showCursor: false,
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-            // commands
-            Gap(5),
-            Container(
-              width: ScreenArea.Width * 0.95,
-              height: ScreenArea.Height * 0.05,
-              decoration: BoxDecoration(
-                color: APPColors.Termianl_background,
-                borderRadius: BorderRadius.circular(10),
+                ],
               ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10.0,
-                  vertical: 5,
-                ),
-                child: Text(
-                  "avrdude -m atm328p - c asp -p USB -E -F",
-                  style: TextStyle(
-                    color: APPColors.command_color_pathed_by_cmd,
+              // total commands
+              Gap(10),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      "Total commands",
+                      style: TextStyle(
+                        color: APPColors.container_title,
+                        fontSize: 16,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
-                ),
+                  Gap(10),
+                  Center(
+                    child: Container(
+                      width: ScreenArea.Width * 0.95,
+                      height: 35,
+                      decoration: BoxDecoration(
+                        color: APPColors.Termianl_background,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 10.0,
+                          vertical: 5,
+                        ),
+                        child: Text(
+                          total_commands.join(" "),
+                          style: TextStyle(
+                            color: APPColors.command_color_pathed_by_cmd,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ),
-            // terminal
-            Gap(10),
-            Container(
-              width: ScreenArea.Width * 0.95,
-              height: ScreenArea.Height * 0.3,
-              decoration: BoxDecoration(
-                color: APPColors.Termianl_background,
-                borderRadius: BorderRadius.circular(10),
+              // terminal
+              Gap(10),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                    child: Text(
+                      "OUTPUT",
+                      style: TextStyle(
+                        color: APPColors.container_title,
+                        fontSize: 16,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                  Gap(10),
+                  Center(
+                    child: Container(
+                      width: ScreenArea.Width * 0.95,
+                      height: 200,
+                      decoration: BoxDecoration(
+                        color: APPColors.Termianl_background,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                Output_commands.join("\n"),
+                                style: GoogleFonts.aDLaMDisplay(
+                                  color: APPColors.color_green,
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  "SEDHOM_AVRDUDE.exe run \n avrdude -m atm328p \n uploading Done >>>",
-                  style: TextStyle(color: APPColors.color_green),
-                ),
-              ),
-            ),
-            Gap(40),
-          ],
+              Gap(40),
+            ],
+          ),
         ),
       ),
     );

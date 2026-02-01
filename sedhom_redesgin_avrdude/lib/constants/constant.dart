@@ -23,4 +23,6 @@ class APPColors {
   static const Color command_color_pathed_by_cmd = Color(0xFF00D7FD);
   //ignore: constant_identifier_names
   static const Color Termianl_background = Color(0xFF181616);
+  //ignore: constant_identifier_names
+  static const Color Divider_color = Color.fromARGB(255, 6, 211, 54);
 }
