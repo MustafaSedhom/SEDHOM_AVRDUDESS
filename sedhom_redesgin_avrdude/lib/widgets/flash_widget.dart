@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sedhom_redesgin_avrdude/constants/constant.dart';
+import 'package:sedhom_redesgin_avrdude/widgets/basic_button.dart';
 import 'package:sedhom_redesgin_avrdude/widgets/basic_widget.dart';
 
-class FlashWidget extends StatelessWidget {
+class FlashWidget extends StatefulWidget {
   const FlashWidget({super.key});
+
+  @override
+  State<FlashWidget> createState() => _FlashWidgetState();
+}
+
+class _FlashWidgetState extends State<FlashWidget> {
+  final Map<String, bool> options = {
+    "Read": false,
+    "Write": true,
+    "Verify": false,
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +28,108 @@ class FlashWidget extends StatelessWidget {
       short_cut_or_not: false,
       choose: Icons.download_for_offline_outlined,
       file_name_and_choose_icon_or_not: true,
-      child: Gap(10),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            // for check boxs
+            Gap(10),
+            Expanded(
+              child: Container(
+                height: 200,
+                decoration: BoxDecoration(
+                  color: Colors.black12,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: ListView(
+                  children: options.keys.map((key) {
+                    return CheckboxListTile(
+                      activeColor: APPColors.icons_color,
+                      checkColor: APPColors.input_field_color_in_container,
+                      checkboxScaleFactor: 2,
+                      side: BorderSide(
+                        color: options[key]!
+                            ? Colors.green
+                            : APPColors.icons_color,
+                        width: 2,
+                      ),
+                      title: Text(
+                        key,
+                        style: TextStyle(
+                          fontSize: 30,
+                          color: APPColors.color_green,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      value: options[key],
+                      onChanged: (bool? value) {
+                        setState(() {
+                          options.updateAll((k, v) => false);
+                          options[key] = value ?? false;
+                        });
+                      },
+                    );
+                  }).toList(),
+                ),
+              ),
+            ),
+            Gap(10),
+            // formates and buttons
+            Expanded(
+              child: Container(
+                height: 200,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Format",
+                      style: TextStyle(
+                        fontSize: 30,
+                        color: APPColors.color_green,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: APPColors.input_field_color_in_container,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                "Writing only",
+                                style: GoogleFonts.alfaSlabOne(
+                                  color: APPColors.Blue_color_basic,
+                                  fontSize: 15,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                            Icon(Icons.install_desktop),
+                          ],
+                        ),
+                      ),
+                    ),
+                    BasicButton(
+                      ontap: () {},
+                      color: APPColors.input_field_color_in_container,
+                      txt: "GO",
+                      color_txt: APPColors.Blue_color_basic,
+                      color_pressed: APPColors.color_green,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
