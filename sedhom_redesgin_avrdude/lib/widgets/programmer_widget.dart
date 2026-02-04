@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sedhom_redesgin_avrdude/constants/constant.dart';
 import 'package:sedhom_redesgin_avrdude/widgets/basic_program_wodgets.dart'
     show ProgrammerOption;
 import 'package:sedhom_redesgin_avrdude/widgets/basic_widget.dart';
@@ -49,6 +52,112 @@ class ProgrammerWidget extends StatelessWidget {
             ),
 
             // buttons and textfeilds
+            Row(
+              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Gap(5),
+                // usb container
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: APPColors.input_field_color_in_container,
+                      borderRadius: BorderRadius.circular(
+                        AppBorderRaduis.border_raduis,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Flexible(
+                            child: Text(
+                              "USB",
+                              style: GoogleFonts.alfaSlabOne(
+                                color: APPColors.Blue_color_basic,
+                                fontSize: 15,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          Gap(5),
+                          Icon(Icons.install_desktop),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Gap(15),
+                // BuadRate container
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: APPColors.input_field_color_in_container,
+                      borderRadius: BorderRadius.circular(
+                        AppBorderRaduis.border_raduis,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Flexible(
+                            child: Text(
+                              "115200",
+                              style: GoogleFonts.alfaSlabOne(
+                                color: APPColors.Blue_color_basic,
+                                fontSize: 15,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          Gap(5),
+                          Icon(Icons.install_desktop),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Gap(10),
+                //Bit clock container
+                Gap(10),
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: APPColors.input_field_color_in_container,
+                      borderRadius: BorderRadius.circular(
+                        AppBorderRaduis.border_raduis,
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Flexible(
+                            child: Text(
+                              "375 KHz",
+                              style: GoogleFonts.alfaSlabOne(
+                                color: APPColors.Blue_color_basic,
+                                fontSize: 15,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                          Gap(5),
+                          Icon(Icons.install_desktop),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Gap(5),
+              ],
+            ),
           ],
         ),
       ),

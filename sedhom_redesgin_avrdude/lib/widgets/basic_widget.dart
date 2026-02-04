@@ -28,6 +28,7 @@ class BasicWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: NeverScrollableScrollPhysics(),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
@@ -68,7 +69,9 @@ class BasicWidget extends StatelessWidget {
                 ? Container(
                     decoration: BoxDecoration(
                       color: APPColors.input_field_color_in_container,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(
+                        AppBorderRaduis.border_raduis,
+                      ),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),

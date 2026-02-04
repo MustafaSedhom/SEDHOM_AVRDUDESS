@@ -24,12 +24,28 @@ class _HomeScreenState extends State<HomeScreen> {
 
   List<String> additional_commands_from_user = [];
   List<String> commandes_passed_on_terminal = ["avrdude", "-m atmega328p"];
-  List<String> total_commands = [""];
+  List<String> total_commands = [];
   List<String> Termianl_output = [
     "Sedhom avrdude started...",
     "Connecting to programmer...",
     "Reading device signature...",
   ];
+
+  // قائمة الحاويات
+  final widgets = [
+    BasicContainer(child: McuWidget()),
+    BasicContainer(child: FlashWidget()),
+    BasicContainer(child: ProgrammerWidget()),
+    BasicContainer(child: EepromWidget()),
+    BasicContainer(child: OptionsWidget()),
+    BasicContainer(child: FusesAndLockBitsWidget()),
+  ];
+  @override
+  void initState() {
+    total_commands =
+        additional_commands_from_user + commandes_passed_on_terminal;
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -46,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
       _scrollController.animateTo(
         _scrollController.position.maxScrollExtent,
-        duration: const Duration(milliseconds: 200),
+        duration: const Duration(milliseconds: 100),
         curve: Curves.easeOut,
       );
     });
@@ -55,6 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     ScreenArea.init(context);
+    int columns = ScreenArea.Width > 800 ? 2 : 1;
     return Scaffold(
       backgroundColor: APPColors.app_background,
       body: SingleChildScrollView(
@@ -85,68 +102,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 endIndent: 16,
               ),
               Gap(10),
-              // 1 and 2 containers
-              Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    BasicContainer(child: McuWidget()),
-                    BasicContainer(child: FlashWidget()),
-                  ],
-                ),
-              ),
-              // 3 and 4 containers
-              Gap(10),
-              Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    BasicContainer(child: ProgrammerWidget()),
-                    BasicContainer(child: EepromWidget()),
-                  ],
-                ),
-              ),
-              // 5 and 6 containers
-              Gap(10),
-              Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    BasicContainer(child: FusesAndLockBitsWidget()),
-                    BasicContainer(child: OptionsWidget()),
-                  ],
-                ),
-              ),
-              Gap(10),
-              Divider(
-                color: APPColors.Divider_color,
-                thickness: 2,
-                indent: 16,
-                endIndent: 16,
-              ),
-              // buttons
-              Gap(10),
-              Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    SecondContainer(
-                      title: "Stop",
-                      titleColor: APPColors.stop_word_color,
-                      onTap: () {
-                        addOutput("Stop program");
-                      },
-                    ),
-                    SecondContainer(
-                      title: "Program !",
-                      titleColor: APPColors.Blue_color_basic,
-                      onTap: () {
-                        addOutput("run program and burn it on CPU");
-                        addOutput(total_commands.join(" "));
-                      },
-                    ),
-                  ],
-                ),
+              // containers
+              Wrap(
+                spacing: 20,
+                runSpacing: 10,
+                alignment: WrapAlignment.center,
+                children: widgets
+                    .map(
+                      (w) => SizedBox(
+                        width: (ScreenArea.Width / columns) - 30,
+                        child: w,
+                      ),
+                    )
+                    .toList(),
               ),
               Gap(10),
               Divider(

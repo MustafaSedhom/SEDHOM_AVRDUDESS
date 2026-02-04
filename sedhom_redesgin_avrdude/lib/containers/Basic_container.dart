@@ -15,7 +15,7 @@ class BasicContainer extends StatelessWidget {
       height: 350,
       decoration: BoxDecoration(
         color: APPColors.container_background,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(AppBorderRaduis.border_raduis_of_basic_containers),
       ),
       child: child,
     );
@@ -35,23 +35,33 @@ class SecondContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        width: ScreenArea.Width * 0.46,
-        height: 70,
-        decoration: BoxDecoration(
-          color: APPColors.input_field_color_in_container,
-          borderRadius: BorderRadius.circular(10),
+    return ElevatedButton(
+      onPressed: onTap,
+
+      style: ButtonStyle(
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         ),
-        child: Center(
-          child: Expanded(
-            child: Text(
-              title,
-              style: GoogleFonts.alfaSlabOne(color: titleColor, fontSize: 20),
-              overflow: TextOverflow.ellipsis,
-              maxLines: 1,
-            ),
+        minimumSize: MaterialStateProperty.all(
+          Size(ScreenArea.Width * 0.46, 70),
+        ),
+        backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {
+          if (states.contains(MaterialState.disabled)) {
+            return Colors.grey;
+          }
+          if (states.contains(MaterialState.pressed)) {
+            return APPColors.color_green;
+          }
+          return APPColors.input_field_color_in_container; // default
+        }),
+      ),
+      child: Center(
+        child: Expanded(
+          child: Text(
+            title,
+            style: GoogleFonts.alfaSlabOne(color: titleColor, fontSize: 20),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
           ),
         ),
       ),

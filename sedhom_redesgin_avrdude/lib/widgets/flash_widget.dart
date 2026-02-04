@@ -15,7 +15,7 @@ class FlashWidget extends StatefulWidget {
 class _FlashWidgetState extends State<FlashWidget> {
   final Map<String, bool> options = {
     "Read": false,
-    "Write": true,
+    "Write": false,
     "Verify": false,
   };
 
@@ -34,15 +34,18 @@ class _FlashWidgetState extends State<FlashWidget> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // for check boxs
-            Gap(10),
+            Gap(20),
             Expanded(
               child: Container(
                 height: 200,
                 decoration: BoxDecoration(
                   color: Colors.black12,
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(
+                    AppBorderRaduis.border_raduis,
+                  ),
                 ),
                 child: ListView(
+                  physics: NeverScrollableScrollPhysics(),
                   children: options.keys.map((key) {
                     return CheckboxListTile(
                       activeColor: APPColors.icons_color,
@@ -93,7 +96,9 @@ class _FlashWidgetState extends State<FlashWidget> {
                     Container(
                       decoration: BoxDecoration(
                         color: APPColors.input_field_color_in_container,
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(
+                          AppBorderRaduis.border_raduis,
+                        ),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),

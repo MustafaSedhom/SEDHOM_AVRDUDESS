@@ -26,3 +26,8 @@ class APPColors {
   //ignore: constant_identifier_names
   static const Color Divider_color = Color.fromARGB(255, 6, 211, 54);
 }
+
+class AppBorderRaduis {
+  static double border_raduis = 25;
+  static double border_raduis_of_basic_containers = 25;
+}

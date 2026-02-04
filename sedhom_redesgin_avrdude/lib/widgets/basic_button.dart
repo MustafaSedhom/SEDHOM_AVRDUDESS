@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sedhom_redesgin_avrdude/constants/constant.dart';
 
 class BasicButton extends StatelessWidget {
   const BasicButton({
@@ -23,7 +24,9 @@ class BasicButton extends StatelessWidget {
 
       style: ButtonStyle(
         shape: MaterialStateProperty.all(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(AppBorderRaduis.border_raduis),
+          ),
         ),
         minimumSize: MaterialStateProperty.all(const Size(100, 50)),
         backgroundColor: MaterialStateProperty.resolveWith<Color>((states) {

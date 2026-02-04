@@ -15,7 +15,7 @@ class EepromWidget extends StatefulWidget {
 class _EepromWidgetState extends State<EepromWidget> {
   final Map<String, bool> options = {
     "Read": false,
-    "Write": true,
+    "Write": false,
     "Verify": false,
   };
 
@@ -40,9 +40,12 @@ class _EepromWidgetState extends State<EepromWidget> {
                 height: 200,
                 decoration: BoxDecoration(
                   color: Colors.black12,
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(
+                    AppBorderRaduis.border_raduis,
+                  ),
                 ),
                 child: ListView(
+                  physics: NeverScrollableScrollPhysics(),
                   children: options.keys.map((key) {
                     return CheckboxListTile(
                       activeColor: APPColors.icons_color,
@@ -93,7 +96,9 @@ class _EepromWidgetState extends State<EepromWidget> {
                     Container(
                       decoration: BoxDecoration(
                         color: APPColors.input_field_color_in_container,
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(
+                          AppBorderRaduis.border_raduis,
+                        ),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
