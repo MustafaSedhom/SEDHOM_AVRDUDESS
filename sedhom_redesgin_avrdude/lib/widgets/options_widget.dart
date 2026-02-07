@@ -1,11 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sedhom_redesgin_avrdude/Avr_data_base/my_data.dart';
 import 'package:sedhom_redesgin_avrdude/constants/constant.dart';
 import 'package:sedhom_redesgin_avrdude/widgets/basic_widget.dart';
+import 'package:sedhom_redesgin_avrdude/widgets/show_dialog_options_widget.dart';
 
 class OptionsWidget extends StatefulWidget {
-  const OptionsWidget({super.key});
+  final ValueChanged<String>? versibality_changed;
+  final ValueChanged<Map<String, bool>>? options_changed;
+  const OptionsWidget({
+    super.key,
+    this.versibality_changed,
+    this.options_changed,
+  });
 
   @override
   State<OptionsWidget> createState() => _OptionsWidgetState();
@@ -16,16 +24,17 @@ class _OptionsWidgetState extends State<OptionsWidget> {
     "Force": false,
     "Erase Flash and EEPROM": false,
     "Disable Verfiy": false,
-    "Donot Write": false,
+    "Don't Write": false,
     "Disable Flash erase": false,
-    "Donot Read": false,
+    "Don't Read": false,
   };
+  int versibality_index = 0;
 
   @override
   Widget build(BuildContext context) {
     return BasicWidget(
       title: "Options",
-      icon: Icons.add_circle_rounded,
+      icon: AppIcons.options_icon,
       short_cut_or_not: false,
       file_name_and_choose_icon_or_not: false,
       child: Column(
@@ -76,6 +85,7 @@ class _OptionsWidgetState extends State<OptionsWidget> {
                     onChanged: (bool? value) {
                       setState(() {
                         options[key] = value ?? false;
+                        widget.options_changed?.call(options);
                       });
                     },
                   );
@@ -93,30 +103,70 @@ class _OptionsWidgetState extends State<OptionsWidget> {
               ),
               Gap(30),
               Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: APPColors.input_field_color_in_container,
-                    borderRadius: BorderRadius.circular(
-                      AppBorderRaduis.border_raduis,
-                    ),
-                  ),
-                  padding: const EdgeInsets.all(8),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Expanded(
-                        child: Text(
-                          "Writing only",
-                          style: GoogleFonts.alfaSlabOne(
-                            color: APPColors.Blue_color_basic,
-                            fontSize: 15,
-                          ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+                child: InkWell(
+                  onTap: () {
+                    Sedhom_show_dialog(
+                      context: context,
+                      title: "Versibality Options",
+                      icon: AppIcons.settings_icon,
+                      items: VersibaltyOptions.versibality_options,
+                      onItemTap: (index) {
+                        widget.versibality_changed?.call(
+                          VersibaltyOptions.versibality_options[index],
+                        );
+                        setState(() {
+                          versibality_index = index;
+                        });
+                      },
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: APPColors.input_field_color_in_container,
+                      borderRadius: BorderRadius.circular(
+                        AppBorderRaduis.border_raduis,
                       ),
-                      const Icon(Icons.install_desktop),
-                    ],
+                    ),
+                    padding: const EdgeInsets.all(8),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Expanded(
+                          child: Center(
+                            child: Text(
+                              VersibaltyOptions
+                                  .versibality_options[versibality_index],
+                              style: GoogleFonts.alfaSlabOne(
+                                color: APPColors.Blue_color_basic,
+                                fontSize: 20,
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        ),
+                        IconButton(
+                          icon: Icon(AppIcons.settings_icon),
+                          color: APPColors.icons_color,
+                          onPressed: () {
+                            Sedhom_show_dialog(
+                              context: context,
+                              title: "Versibality Options",
+                              icon: AppIcons.settings_icon,
+                              items: VersibaltyOptions.versibality_options,
+                              onItemTap: (index) {
+                                widget.versibality_changed?.call(
+                                  VersibaltyOptions.versibality_options[index],
+                                );
+                                setState(() {
+                                  versibality_index = index;
+                                });
+                              },
+                            );
+                          },
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

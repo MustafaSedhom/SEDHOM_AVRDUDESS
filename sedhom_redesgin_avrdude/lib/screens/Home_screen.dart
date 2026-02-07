@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sedhom_redesgin_avrdude/Avr_data_base/my_data.dart';
 import 'package:sedhom_redesgin_avrdude/constants/constant.dart';
 import 'package:sedhom_redesgin_avrdude/containers/Basic_container.dart';
 import 'package:sedhom_redesgin_avrdude/Resbonseive/screen_area.dart';
@@ -23,22 +24,107 @@ class _HomeScreenState extends State<HomeScreen> {
   final ScrollController _scrollController = ScrollController();
 
   List<String> additional_commands_from_user = [];
-  List<String> commandes_passed_on_terminal = ["avrdude", "-m atmega328p"];
+  List<String> commandes_passed_on_terminal = ["avrdude"];
   List<String> total_commands = [];
   List<String> Termianl_output = [
     "Sedhom avrdude started...",
     "Connecting to programmer...",
     "Reading device signature...",
   ];
+  MCU? selected_mcu;
 
-  // قائمة الحاويات
-  final widgets = [
-    BasicContainer(child: McuWidget()),
-    BasicContainer(child: FlashWidget()),
-    BasicContainer(child: ProgrammerWidget()),
-    BasicContainer(child: EepromWidget()),
-    BasicContainer(child: OptionsWidget()),
-    BasicContainer(child: FusesAndLockBitsWidget()),
+  List<BasicContainer> get widgets => [
+    BasicContainer(
+      child: McuWidget(
+        onMcuSelected: (mcu) {
+          setState(() {
+            selected_mcu = mcu;
+            addOutput("Selected MCU >>> ");
+            addOutput(">>> mcu name : ${mcu.name}");
+            addOutput(">>> mcu id name : ${mcu.partId}");
+            addOutput(">>> mcu flash size : ${mcu.flashKB} KB");
+            addOutput(">>> mcu eeprom size : ${mcu.eepromKB} KB");
+            addOutput(">>> mcu pins : ${mcu.pins}");
+          });
+        },
+      ),
+    ),
+    BasicContainer(
+      child: FlashWidget(
+        onFlashOptionSelected: (str) {
+          addOutput("Selected flash file >>> $str");
+        },
+        read_write_verify_selected: (options) {
+          addOutput("Selected flash options >>> ${options}");
+        },
+        format_selected: (format) {
+          addOutput("Selected flash format >>> $format");
+        },
+      ),
+    ),
+    BasicContainer(
+      child: ProgrammerWidget(
+        onProgrammerSelected: (str) {
+          addOutput("Selected programmer >>> $str");
+        },
+        onPortSelected: (str) {
+          addOutput("Selected port >>> $str");
+        },
+        onBaudRateSelected: (str) {
+          addOutput("Selected baud rate >>> $str");
+        },
+        onBitClockSelected: (str) {
+          addOutput("Selected bit clock >>> $str");
+        },
+      ),
+    ),
+    BasicContainer(
+      child: EepromWidget(
+        onFlashOptionSelected: (str) {
+          addOutput("Selected eeprom file >>> $str");
+        },
+        read_write_verify_selected: (options) {
+          addOutput("Selected eeprom options >>> ${options}");
+        },
+        format_selected: (format) {
+          addOutput("Selected eeprom format >>> $format");
+        },
+      ),
+    ),
+    BasicContainer(
+      child: OptionsWidget(
+        versibality_changed: (str) {
+          addOutput("Selected versibality >>> $str");
+        },
+        options_changed: (options) {
+          addOutput(
+            "Selected options >>> ${options.entries.where((entry) => entry.value).map((entry) => entry.key).toList()}",
+          );
+        },
+      ),
+    ),
+    BasicContainer(
+      child: FusesAndLockBitsWidget(
+        L_fuse_changed: (str) {
+          addOutput("Selected L fuse >>> $str");
+        },
+        H_fuse_changed: (str) {
+          addOutput("Selected H fuse >>> $str");
+        },
+        E_fuse_changed: (str) {
+          addOutput("Selected E fuse >>> $str");
+        },
+        LB_fuse_changed: (str) {
+          addOutput("Selected LB fuse >>> $str");
+        },
+        set_fuse_changed: (str) {
+          addOutput("Set fuses >>> $str");
+        },
+        set_lock_read: (str) {
+          addOutput("Set locks >>> $str");
+        },
+      ),
+    ),
   ];
   @override
   void initState() {
@@ -82,17 +168,40 @@ class _HomeScreenState extends State<HomeScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Gap(10),
-              // sedhom avrdude text
-              Center(
-                child: Text(
-                  "SEDHOM AVRDUDESS",
-                  style: GoogleFonts.abrilFatface(
-                    fontSize: 40,
-                    // fontWeight: FontWeight.bold,
-                    color: APPColors.Blue_color_basic,
+              // sedhom avrdude text and install button
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Spacer(),
+                  Center(
+                    child: Text(
+                      "SEDHOM AVRDUDESS",
+                      style: GoogleFonts.abrilFatface(
+                        fontSize: 40,
+                        color: APPColors.Blue_color_basic,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
-                  overflow: TextOverflow.ellipsis,
-                ),
+                  Spacer(),
+                  Center(
+                    child: IconButton(
+                      onPressed: () {
+                        addOutput(
+                          "installing avrdude to your computer terminal",
+                        );
+                      },
+                      icon: Icon(
+                        Icons.download_for_offline_outlined,
+                        color: APPColors.icons_color,
+                        size: 40,
+                      ),
+                      tooltip: "install AVRDUDE on you computer terminal's",
+                      hoverColor: APPColors.container_background,
+                    ),
+                  ),
+                  Gap(20),
+                ],
               ),
               Gap(10),
               Divider(
@@ -115,6 +224,37 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     )
                     .toList(),
+              ),
+              Gap(10),
+              Divider(
+                color: APPColors.Divider_color,
+                thickness: 2,
+                indent: 16,
+                endIndent: 16,
+              ),
+              Gap(10),
+              // buttons
+              Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    SecondContainer(
+                      title: "Stop",
+                      titleColor: APPColors.stop_word_color,
+                      onTap: () {
+                        addOutput("Stop program");
+                      },
+                    ),
+                    SecondContainer(
+                      title: "Program !",
+                      titleColor: APPColors.Blue_color_basic,
+                      onTap: () {
+                        addOutput("run program and burn it on CPU");
+                        addOutput(total_commands.join(" "));
+                      },
+                    ),
+                  ],
+                ),
               ),
               Gap(10),
               Divider(
@@ -310,7 +450,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                                   child: const Center(
                                     child: Icon(
-                                      Icons.cleaning_services_outlined,
+                                      AppIcons.clear_terminal_icon,
                                       color: APPColors.stop_word_color,
                                     ),
                                   ),

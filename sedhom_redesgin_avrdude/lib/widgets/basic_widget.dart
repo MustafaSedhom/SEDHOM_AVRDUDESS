@@ -12,8 +12,9 @@ class BasicWidget extends StatelessWidget {
   final bool short_cut_or_not;
   final bool file_name_and_choose_icon_or_not;
   final Widget child;
+  final Function()? ontap;
 
-  const BasicWidget({
+  const BasicWidget( {
     super.key,
     required this.title,
     this.short_cut,
@@ -23,6 +24,7 @@ class BasicWidget extends StatelessWidget {
     this.choose,
     required this.file_name_and_choose_icon_or_not,
     required this.child,
+    this.ontap,
   });
 
   @override
@@ -66,32 +68,39 @@ class BasicWidget extends StatelessWidget {
             ),
             Gap(5),
             file_name_and_choose_icon_or_not
-                ? Container(
-                    decoration: BoxDecoration(
-                      color: APPColors.input_field_color_in_container,
-                      borderRadius: BorderRadius.circular(
-                        AppBorderRaduis.border_raduis,
+                ? InkWell(
+                    onTap: ontap,
+
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: APPColors.input_field_color_in_container,
+                        borderRadius: BorderRadius.circular(
+                          AppBorderRaduis.border_raduis,
+                        ),
                       ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: Text(
-                              file_name!,
-                              style: GoogleFonts.alfaSlabOne(
-                                color: APPColors.Blue_color_basic,
-                                fontSize: 20,
-                                // fontWeight: FontWeight.bold,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                file_name!,
+                                style: GoogleFonts.alfaSlabOne(
+                                  color: APPColors.Blue_color_basic,
+                                  fontSize: 20,
+                                ),
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
                               ),
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
                             ),
-                          ),
-                          Icon(choose, size: 40),
-                        ],
+                            IconButton(
+                              onPressed: ontap,
+                              icon: Icon(choose, size: 40),
+                              color: APPColors.icons_color,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   )

@@ -31,3 +31,21 @@ class AppBorderRaduis {
   static double border_raduis = 25;
   static double border_raduis_of_basic_containers = 25;
 }
+
+class AppIcons {
+  static const IconData flash_icon = Icons.sd_card;
+  static const IconData eeprom_icon = Icons.storage_outlined;
+  static const IconData fuse_icon = Icons.lock;
+  static const IconData lock_bits_icon = Icons.lock_outline;
+  static const IconData programmer_icon = Icons.developer_board;
+  static const IconData terminal_icon = Icons.terminal;
+  static const IconData settings_icon = Icons.settings;
+  static const IconData mcu_icon = Icons.memory_sharp;
+  static const IconData upload_icon = Icons.upload;
+  static const IconData choose_icon = Icons.mode_edit;
+  static const IconData usb_icon = Icons.usb;
+  static const IconData baud_rate_icon = Icons.speed_rounded;
+  static const IconData bit_clock_icon = Icons.punch_clock;
+  static const IconData options_icon = Icons.add_circle_rounded;
+  static const IconData clear_terminal_icon = Icons.cleaning_services_outlined;
+}

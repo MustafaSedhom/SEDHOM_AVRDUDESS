@@ -4,8 +4,14 @@ import 'package:sedhom_redesgin_avrdude/constants/constant.dart';
 class CheckBoxAndText extends StatefulWidget {
   final Map<String, bool> map;
   final String keyName;
+  final Function? func_do;
 
-  const CheckBoxAndText({super.key, required this.map, required this.keyName});
+  const CheckBoxAndText({
+    super.key,
+    required this.map,
+    required this.keyName,
+    this.func_do,
+  });
 
   @override
   State<CheckBoxAndText> createState() => _CheckBoxAndTextState();
@@ -24,6 +30,7 @@ class _CheckBoxAndTextState extends State<CheckBoxAndText> {
             onChanged: (val) {
               setState(() {
                 widget.map[widget.keyName] = val!;
+                widget.func_do?.call();
               });
             },
             activeColor: APPColors.icons_color,

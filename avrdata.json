@@ -1,0 +1,1914 @@
+{
+  "mcu": [
+    {},
+    {},
+    {},
+    {},
+    {},
+    {
+      "signature": ""
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "id": "dryrun",
+      "name": "Emulates programming without a programmer"
+    },
+    {
+      "id": "dryboot"
+    },
+    {
+      "id": "wiring",
+      "name": "Wiring bootloader using STK500 v2 protocol"
+    },
+    {
+      "id": "urclock",
+      "name": "Urboot bootloaders using urprotocol"
+    },
+    {
+      "id": ".reduced_core_tiny",
+      "name": "Common values for reduced core tinys"
+    },
+    {
+      "id": "t4",
+      "name": "ATtiny4",
+      "signature": "0x1e 0x8f 0x0a"
+    },
+    {
+      "id": "t5",
+      "name": "ATtiny5",
+      "signature": "0x1e 0x8f 0x09"
+    },
+    {
+      "id": "t9",
+      "name": "ATtiny9",
+      "signature": "0x1e 0x90 0x08"
+    },
+    {
+      "id": "t10",
+      "name": "ATtiny10",
+      "signature": "0x1e 0x90 0x03"
+    },
+    {
+      "id": "t20",
+      "name": "ATtiny20",
+      "signature": "0x1e 0x91 0x0f"
+    },
+    {
+      "id": "t40",
+      "name": "ATtiny40",
+      "signature": "0x1e 0x92 0x0e"
+    },
+    {
+      "id": "t102",
+      "name": "ATtiny102",
+      "signature": "0x1e 0x90 0x0c"
+    },
+    {
+      "id": "t104",
+      "name": "ATtiny104",
+      "signature": "0x1e 0x90 0x0b"
+    },
+    {},
+    {
+      "id": ".classic-nocal",
+      "name": "Common values for classic parts without calibration mem"
+    },
+    {
+      "id": ".classic",
+      "name": "Common values for classic parts"
+    },
+    {
+      "id": "t11",
+      "name": "ATtiny11",
+      "signature": "0x1e 0x90 0x04"
+    },
+    {
+      "id": "t12",
+      "name": "ATtiny12",
+      "signature": "0x1e 0x90 0x05"
+    },
+    {
+      "id": "t15",
+      "name": "ATtiny15",
+      "signature": "0x1e 0x90 0x06"
+    },
+    {
+      "id": "t22",
+      "name": "ATtiny22",
+      "signature": "0x1e 0x91 0x06"
+    },
+    {
+      "id": "t13",
+      "name": "ATtiny13",
+      "signature": "0x1e 0x90 0x07"
+    },
+    {
+      "id": "t13a",
+      "name": "ATtiny13A"
+    },
+    {
+      "id": "t25",
+      "name": "ATtiny25",
+      "signature": "0x1e 0x91 0x08"
+    },
+    {
+      "id": "t45",
+      "name": "ATtiny45",
+      "signature": "0x1e 0x92 0x06"
+    },
+    {
+      "id": "t85",
+      "name": "ATtiny85",
+      "signature": "0x1e 0x93 0x0b"
+    },
+    {
+      "id": "t2313",
+      "name": "ATtiny2313",
+      "signature": "0x1e 0x91 0x0a"
+    },
+    {
+      "id": "t2313a",
+      "name": "ATtiny2313A"
+    },
+    {
+      "id": "t4313",
+      "name": "ATtiny4313",
+      "signature": "0x1e 0x92 0x0d"
+    },
+    {
+      "id": "t24",
+      "name": "ATtiny24",
+      "signature": "0x1e 0x91 0x0b"
+    },
+    {
+      "id": "t24a",
+      "name": "ATtiny24A"
+    },
+    {
+      "id": "t44",
+      "name": "ATtiny44",
+      "signature": "0x1e 0x92 0x07"
+    },
+    {
+      "id": "t44a",
+      "name": "ATtiny44A"
+    },
+    {
+      "id": "t84",
+      "name": "ATtiny84",
+      "signature": "0x1e 0x93 0x0c"
+    },
+    {
+      "id": "t84a",
+      "name": "ATtiny84A"
+    },
+    {
+      "id": "t441",
+      "name": "ATtiny441",
+      "signature": "0x1e 0x92 0x15"
+    },
+    {
+      "id": "t841",
+      "name": "ATtiny841",
+      "signature": "0x1e 0x93 0x15"
+    },
+    {
+      "id": "t26",
+      "name": "ATtiny26",
+      "signature": "0x1e 0x91 0x09"
+    },
+    {
+      "id": "t261",
+      "name": "ATtiny261",
+      "signature": "0x1e 0x91 0x0c"
+    },
+    {
+      "id": "t261a",
+      "name": "ATtiny261A"
+    },
+    {
+      "id": "t461",
+      "name": "ATtiny461",
+      "signature": "0x1e 0x92 0x08"
+    },
+    {
+      "id": "t461a",
+      "name": "ATtiny461A"
+    },
+    {
+      "id": "t861",
+      "name": "ATtiny861",
+      "signature": "0x1e 0x93 0x0d"
+    },
+    {
+      "id": "t861a",
+      "name": "ATtiny861A"
+    },
+    {
+      "id": "t48",
+      "name": "ATtiny48",
+      "signature": "0x1e 0x92 0x09"
+    },
+    {
+      "id": "t88",
+      "name": "ATtiny88",
+      "signature": "0x1e 0x93 0x11"
+    },
+    {
+      "id": "t28",
+      "name": "ATtiny28",
+      "signature": "0x1e 0x91 0x07"
+    },
+    {
+      "id": "t43u",
+      "name": "ATtiny43U",
+      "signature": "0x1e 0x92 0x0c"
+    },
+    {
+      "id": "t828",
+      "name": "ATtiny828",
+      "signature": "0x1e 0x93 0x14"
+    },
+    {
+      "id": "t828r",
+      "name": "ATtiny828R"
+    },
+    {
+      "id": "t87",
+      "name": "ATtiny87",
+      "signature": "0x1e 0x93 0x87"
+    },
+    {
+      "id": "t167",
+      "name": "ATtiny167",
+      "signature": "0x1e 0x94 0x87"
+    },
+    {
+      "id": "t1634",
+      "name": "ATtiny1634",
+      "signature": "0x1e 0x94 0x12"
+    },
+    {
+      "id": "t1634r",
+      "name": "ATtiny1634R"
+    },
+    {
+      "id": "c32",
+      "name": "AT90CAN32",
+      "signature": "0x1e 0x95 0x81"
+    },
+    {
+      "id": "c64",
+      "name": "AT90CAN64",
+      "signature": "0x1e 0x96 0x81"
+    },
+    {
+      "id": "c128",
+      "name": "AT90CAN128",
+      "signature": "0x1e 0x97 0x81"
+    },
+    {
+      "id": "pwm81",
+      "name": "AT90PWM81",
+      "signature": "0x1e 0x93 0x88"
+    },
+    {
+      "id": "pwm161",
+      "name": "AT90PWM161",
+      "signature": "0x1e 0x94 0x8b"
+    },
+    {
+      "id": "pwm1",
+      "name": "AT90PWM1",
+      "signature": "0x1e 0x93 0x83"
+    },
+    {
+      "id": "pwm2",
+      "name": "AT90PWM2",
+      "signature": "0x1e 0x93 0x81"
+    },
+    {
+      "id": "pwm2b",
+      "name": "AT90PWM2B",
+      "signature": "0x1e 0x93 0x83"
+    },
+    {
+      "id": "pwm3",
+      "name": "AT90PWM3",
+      "signature": "0x1e 0x93 0x81"
+    },
+    {
+      "id": "pwm3b",
+      "name": "AT90PWM3B",
+      "signature": "0x1e 0x93 0x83"
+    },
+    {
+      "id": "pwm216",
+      "name": "AT90PWM216",
+      "signature": "0x1e 0x94 0x83"
+    },
+    {
+      "id": "pwm316",
+      "name": "AT90PWM316"
+    },
+    {
+      "id": "usb646",
+      "name": "AT90USB646",
+      "signature": "0x1e 0x96 0x82"
+    },
+    {
+      "id": "usb647",
+      "name": "AT90USB647"
+    },
+    {
+      "id": "usb1286",
+      "name": "AT90USB1286",
+      "signature": "0x1e 0x97 0x82"
+    },
+    {
+      "id": "usb1287",
+      "name": "AT90USB1287",
+      "signature": "0x1e 0x97 0x82"
+    },
+    {
+      "id": "usb82",
+      "name": "AT90USB82",
+      "signature": "0x1e 0x93 0x82"
+    },
+    {
+      "id": "usb162",
+      "name": "AT90USB162",
+      "signature": "0x1e 0x94 0x82"
+    },
+    {
+      "id": "1200",
+      "name": "AT90S1200",
+      "signature": "0x1e 0x90 0x01"
+    },
+    {
+      "id": "2313",
+      "name": "AT90S2313",
+      "signature": "0x1e 0x91 0x01"
+    },
+    {
+      "id": "2323",
+      "name": "AT90S2323",
+      "signature": "0x1e 0x91 0x02"
+    },
+    {
+      "id": "2343",
+      "name": "AT90S2343",
+      "signature": "0x1e 0x91 0x03"
+    },
+    {
+      "id": "2333",
+      "name": "AT90S2333",
+      "signature": "0x1e 0x91 0x05"
+    },
+    {
+      "id": "4433",
+      "name": "AT90S4433",
+      "signature": "0x1e 0x92 0x03"
+    },
+    {
+      "id": "4414",
+      "name": "AT90S4414",
+      "signature": "0x1e 0x92 0x01"
+    },
+    {
+      "id": "8515",
+      "name": "AT90S8515",
+      "signature": "0x1e 0x93 0x01"
+    },
+    {
+      "id": "4434",
+      "name": "AT90S4434",
+      "signature": "0x1e 0x92 0x02"
+    },
+    {
+      "id": "8535",
+      "name": "AT90S8535",
+      "signature": "0x1e 0x93 0x03"
+    },
+    {
+      "id": "m103",
+      "name": "ATmega103",
+      "signature": "0x1e 0x97 0x01"
+    },
+    {
+      "id": "m161",
+      "name": "ATmega161",
+      "signature": "0x1e 0x94 0x01"
+    },
+    {
+      "id": "m162",
+      "name": "ATmega162",
+      "signature": "0x1e 0x94 0x04"
+    },
+    {
+      "id": "m163",
+      "name": "ATmega163",
+      "signature": "0x1e 0x94 0x02"
+    },
+    {
+      "id": "m8515",
+      "name": "ATmega8515",
+      "signature": "0x1e 0x93 0x06"
+    },
+    {
+      "id": "m8535",
+      "name": "ATmega8535",
+      "signature": "0x1e 0x93 0x08"
+    },
+    {
+      "id": "m8",
+      "name": "ATmega8",
+      "signature": "0x1e 0x93 0x07"
+    },
+    {
+      "id": "m8a",
+      "name": "ATmega8A"
+    },
+    {
+      "id": "m16",
+      "name": "ATmega16",
+      "signature": "0x1e 0x94 0x03"
+    },
+    {
+      "id": "m16a",
+      "name": "ATmega16A"
+    },
+    {
+      "id": "m32",
+      "name": "ATmega32",
+      "signature": "0x1e 0x95 0x02"
+    },
+    {
+      "id": "m32a",
+      "name": "ATmega32A"
+    },
+    {
+      "id": "m64",
+      "name": "ATmega64",
+      "signature": "0x1e 0x96 0x02"
+    },
+    {
+      "id": "m64a",
+      "name": "ATmega64A"
+    },
+    {
+      "id": "m128",
+      "name": "ATmega128",
+      "signature": "0x1e 0x97 0x02"
+    },
+    {
+      "id": "m128a",
+      "name": "ATmega128A"
+    },
+    {
+      "id": "m640",
+      "name": "ATmega640",
+      "signature": "0x1e 0x96 0x08"
+    },
+    {
+      "id": "m1280",
+      "name": "ATmega1280",
+      "signature": "0x1e 0x97 0x03"
+    },
+    {
+      "id": "m1281",
+      "name": "ATmega1281",
+      "signature": "0x1e 0x97 0x04"
+    },
+    {
+      "id": "m2560",
+      "name": "ATmega2560",
+      "signature": "0x1e 0x98 0x01"
+    },
+    {
+      "id": "m2561",
+      "name": "ATmega2561",
+      "signature": "0x1e 0x98 0x02"
+    },
+    {
+      "id": "m164p",
+      "name": "ATmega164P",
+      "signature": "0x1e 0x94 0x0a"
+    },
+    {
+      "id": "m164a",
+      "name": "ATmega164A",
+      "signature": "0x1e 0x94 0x0f"
+    },
+    {
+      "id": "m164pa",
+      "name": "ATmega164PA"
+    },
+    {
+      "id": "m324p",
+      "name": "ATmega324P",
+      "signature": "0x1e 0x95 0x08"
+    },
+    {
+      "id": "m324a",
+      "name": "ATmega324A",
+      "signature": "0x1e 0x95 0x15"
+    },
+    {
+      "id": "m324pa",
+      "name": "ATmega324PA",
+      "signature": "0x1e 0x95 0x11"
+    },
+    {
+      "id": "m324pb",
+      "name": "ATmega324PB",
+      "signature": "0x1e 0x95 0x17"
+    },
+    {
+      "id": "m644",
+      "name": "ATmega644",
+      "signature": "0x1e 0x96 0x09"
+    },
+    {
+      "id": "m644p",
+      "name": "ATmega644P",
+      "signature": "0x1e 0x96 0x0a"
+    },
+    {
+      "id": "m644a",
+      "name": "ATmega644A"
+    },
+    {
+      "id": "m644pa",
+      "name": "ATmega644PA",
+      "signature": "0x1e 0x96 0x0a"
+    },
+    {
+      "id": "m1284",
+      "name": "ATmega1284",
+      "signature": "0x1e 0x97 0x06"
+    },
+    {
+      "id": "m1284p",
+      "name": "ATmega1284P",
+      "signature": "0x1e 0x97 0x05"
+    },
+    {
+      "id": "m128rfa1",
+      "name": "ATmega128RFA1",
+      "signature": "0x1e 0xa7 0x01"
+    },
+    {
+      "id": "m644rfr2",
+      "name": "ATmega644RFR2",
+      "signature": "0x1e 0xa6 0x03"
+    },
+    {
+      "id": "m1284rfr2",
+      "name": "ATmega1284RFR2",
+      "signature": "0x1e 0xa7 0x03"
+    },
+    {
+      "id": "m2564rfr2",
+      "name": "ATmega2564RFR2",
+      "signature": "0x1e 0xa8 0x03"
+    },
+    {
+      "id": "m64rfr2",
+      "name": "ATmega64RFR2",
+      "signature": "0x1e 0xa6 0x02"
+    },
+    {
+      "id": "m128rfr2",
+      "name": "ATmega128RFR2",
+      "signature": "0x1e 0xa7 0x02"
+    },
+    {
+      "id": "m256rfr2",
+      "name": "ATmega256RFR2",
+      "signature": "0x1e 0xa8 0x02"
+    },
+    {
+      "id": "m165",
+      "name": "ATmega165",
+      "signature": "0x1e 0x94 0x07"
+    },
+    {
+      "id": "m165p",
+      "name": "ATmega165P"
+    },
+    {
+      "id": "m165a",
+      "name": "ATmega165A",
+      "signature": "0x1e 0x94 0x10"
+    },
+    {
+      "id": "m165pa",
+      "name": "ATmega165PA"
+    },
+    {
+      "id": "m325",
+      "name": "ATmega325",
+      "signature": "0x1e 0x95 0x05"
+    },
+    {
+      "id": "m325p",
+      "name": "ATmega325P",
+      "signature": "0x1e 0x95 0x0d"
+    },
+    {
+      "id": "m325a",
+      "name": "ATmega325A"
+    },
+    {
+      "id": "m325pa",
+      "name": "ATmega325PA",
+      "signature": "0x1e 0x95 0x0d"
+    },
+    {
+      "id": "m3250",
+      "name": "ATmega3250",
+      "signature": "0x1e 0x95 0x06"
+    },
+    {
+      "id": "m3250p",
+      "name": "ATmega3250P",
+      "signature": "0x1e 0x95 0x0e"
+    },
+    {
+      "id": "m3250a",
+      "name": "ATmega3250A"
+    },
+    {
+      "id": "m3250pa",
+      "name": "ATmega3250PA",
+      "signature": "0x1e 0x95 0x0e"
+    },
+    {
+      "id": "m645",
+      "name": "ATmega645",
+      "signature": "0x1e 0x96 0x05"
+    },
+    {
+      "id": "m645p",
+      "name": "ATmega645P",
+      "signature": "0x1e 0x96 0x0d"
+    },
+    {
+      "id": "m645a",
+      "name": "ATmega645A"
+    },
+    {
+      "id": "m6450",
+      "name": "ATmega6450",
+      "signature": "0x1e 0x96 0x06"
+    },
+    {
+      "id": "m6450p",
+      "name": "ATmega6450P",
+      "signature": "0x1e 0x96 0x0e"
+    },
+    {
+      "id": "m6450a",
+      "name": "ATmega6450A"
+    },
+    {
+      "id": "m48",
+      "name": "ATmega48",
+      "signature": "0x1e 0x92 0x05"
+    },
+    {
+      "id": "m48p",
+      "name": "ATmega48P",
+      "signature": "0x1e 0x92 0x0a"
+    },
+    {
+      "id": "m48a",
+      "name": "ATmega48A"
+    },
+    {
+      "id": "m48pa",
+      "name": "ATmega48PA",
+      "signature": "0x1e 0x92 0x0a"
+    },
+    {
+      "id": "m88",
+      "name": "ATmega88",
+      "signature": "0x1e 0x93 0x0a"
+    },
+    {
+      "id": "m88p",
+      "name": "ATmega88P",
+      "signature": "0x1e 0x93 0x0f"
+    },
+    {
+      "id": "m88a",
+      "name": "ATmega88A"
+    },
+    {
+      "id": "m88pa",
+      "name": "ATmega88PA",
+      "signature": "0x1e 0x93 0x0f"
+    },
+    {
+      "id": "m168",
+      "name": "ATmega168",
+      "signature": "0x1e 0x94 0x06"
+    },
+    {
+      "id": "m168p",
+      "name": "ATmega168P",
+      "signature": "0x1e 0x94 0x0b"
+    },
+    {
+      "id": "m168a",
+      "name": "ATmega168A"
+    },
+    {
+      "id": "m168pa",
+      "name": "ATmega168PA",
+      "signature": "0x1e 0x94 0x0b"
+    },
+    {
+      "id": "m328",
+      "name": "ATmega328",
+      "signature": "0x1e 0x95 0x14"
+    },
+    {
+      "id": "m328p",
+      "name": "ATmega328P",
+      "signature": "0x1e 0x95 0x0f"
+    },
+    {
+      "id": "m48pb",
+      "name": "ATmega48PB",
+      "signature": "0x1e 0x92 0x10"
+    },
+    {
+      "id": "m88pb",
+      "name": "ATmega88PB",
+      "signature": "0x1e 0x93 0x16"
+    },
+    {
+      "id": "m168pb",
+      "name": "ATmega168PB",
+      "signature": "0x1e 0x94 0x15"
+    },
+    {
+      "id": "m328pb",
+      "name": "ATmega328PB",
+      "signature": "0x1e 0x95 0x16"
+    },
+    {
+      "id": "m169",
+      "name": "ATmega169",
+      "signature": "0x1e 0x94 0x05"
+    },
+    {
+      "id": "m169p",
+      "name": "ATmega169P"
+    },
+    {
+      "id": "m169a",
+      "name": "ATmega169A",
+      "signature": "0x1e 0x94 0x11"
+    },
+    {
+      "id": "m169pa",
+      "name": "ATmega169PA"
+    },
+    {
+      "id": "m329",
+      "name": "ATmega329",
+      "signature": "0x1e 0x95 0x03"
+    },
+    {
+      "id": "m329p",
+      "name": "ATmega329P",
+      "signature": "0x1e 0x95 0x0b"
+    },
+    {
+      "id": "m329a",
+      "name": "ATmega329A"
+    },
+    {
+      "id": "m329pa",
+      "name": "ATmega329PA",
+      "signature": "0x1e 0x95 0x0b"
+    },
+    {
+      "id": "m3290",
+      "name": "ATmega3290",
+      "signature": "0x1e 0x95 0x04"
+    },
+    {
+      "id": "m3290p",
+      "name": "ATmega3290P",
+      "signature": "0x1e 0x95 0x0c"
+    },
+    {
+      "id": "m3290a",
+      "name": "ATmega3290A"
+    },
+    {
+      "id": "m3290pa",
+      "name": "ATmega3290PA",
+      "signature": "0x1e 0x95 0x0c"
+    },
+    {
+      "id": "m649",
+      "name": "ATmega649",
+      "signature": "0x1e 0x96 0x03"
+    },
+    {
+      "id": "m649p",
+      "name": "ATmega649P",
+      "signature": "0x1e 0x96 0x0b"
+    },
+    {
+      "id": "m649a",
+      "name": "ATmega649A"
+    },
+    {
+      "id": "m6490",
+      "name": "ATmega6490",
+      "signature": "0x1e 0x96 0x04"
+    },
+    {
+      "id": "m6490p",
+      "name": "ATmega6490P",
+      "signature": "0x1e 0x96 0x0c"
+    },
+    {
+      "id": "m6490a",
+      "name": "ATmega6490A"
+    },
+    {
+      "id": "m8hva",
+      "name": "ATmega8HVA",
+      "signature": "0x1e 0x93 0x10"
+    },
+    {
+      "id": "m16hva",
+      "name": "ATmega16HVA",
+      "signature": "0x1e 0x94 0x0c"
+    },
+    {
+      "id": "m32hve2",
+      "name": "ATmega32HVE2",
+      "signature": "0x1e 0x95 0x13"
+    },
+    {
+      "id": "m64hve2",
+      "name": "ATmega64HVE2",
+      "signature": "0x1e 0x96 0x10"
+    },
+    {
+      "id": "m16hvb",
+      "name": "ATmega16HVB",
+      "signature": "0x1e 0x94 0x0d"
+    },
+    {
+      "id": "m16hvbrevb",
+      "name": "ATmega16HVBrevB"
+    },
+    {
+      "id": "m32hvb",
+      "name": "ATmega32HVB",
+      "signature": "0x1e 0x95 0x10"
+    },
+    {
+      "id": "m32hvbrevb",
+      "name": "ATmega32HVBrevB"
+    },
+    {
+      "id": "m16m1",
+      "name": "ATmega16M1",
+      "signature": "0x1e 0x94 0x84"
+    },
+    {
+      "id": "m32c1",
+      "name": "ATmega32C1",
+      "signature": "0x1e 0x95 0x86"
+    },
+    {
+      "id": "m32m1",
+      "name": "ATmega32M1",
+      "signature": "0x1e 0x95 0x84"
+    },
+    {
+      "id": "m64c1",
+      "name": "ATmega64C1",
+      "signature": "0x1e 0x96 0x86"
+    },
+    {
+      "id": "m64m1",
+      "name": "ATmega64M1",
+      "signature": "0x1e 0x96 0x84"
+    },
+    {
+      "id": "m8u2",
+      "name": "ATmega8U2",
+      "signature": "0x1e 0x93 0x89"
+    },
+    {
+      "id": "m16u2",
+      "name": "ATmega16U2",
+      "signature": "0x1e 0x94 0x89"
+    },
+    {
+      "id": "m32u2",
+      "name": "ATmega32U2",
+      "signature": "0x1e 0x95 0x8a"
+    },
+    {
+      "id": "m16u4",
+      "name": "ATmega16U4",
+      "signature": "0x1e 0x94 0x88"
+    },
+    {
+      "id": "m32u4",
+      "name": "ATmega32U4",
+      "signature": "0x1e 0x95 0x87"
+    },
+    {
+      "id": "m406",
+      "name": "ATmega406",
+      "signature": "0x1e 0x95 0x07"
+    },
+    {
+      "id": "a6612c",
+      "name": "ATA6612C",
+      "signature": "0x1e 0x93 0x0a"
+    },
+    {
+      "id": "a6613c",
+      "name": "ATA6613C",
+      "signature": "0x1e 0x94 0x06"
+    },
+    {
+      "id": "a6616c",
+      "name": "ATA6616C",
+      "signature": "0x1e 0x93 0x87"
+    },
+    {
+      "id": "a6617c",
+      "name": "ATA6617C",
+      "signature": "0x1e 0x94 0x87"
+    },
+    {
+      "id": "a5505",
+      "name": "ATA5505",
+      "signature": "0x1e 0x94 0x87"
+    },
+    {
+      "id": "a6614q",
+      "name": "ATA6614Q",
+      "signature": "0x1e 0x95 0x0f"
+    },
+    {
+      "id": "a664251",
+      "name": "ATA664251",
+      "signature": "0x1e 0x94 0x87"
+    },
+    {
+      "id": "lgt88p",
+      "name": "LGT8F88P",
+      "signature": "0x1e 0x93 0x0f"
+    },
+    {
+      "id": "lgt168p",
+      "name": "LGT8F168P",
+      "signature": "0x1e 0x94 0x0b"
+    },
+    {
+      "id": "lgt328p",
+      "name": "LGT8F328P",
+      "signature": "0x1e 0x95 0x0f"
+    },
+    {},
+    {
+      "id": "89S51",
+      "name": "AT89S51",
+      "signature": "0x1e 0x51 0x06"
+    },
+    {
+      "id": "89S52",
+      "name": "AT89S52",
+      "signature": "0x1e 0x52 0x06"
+    },
+    {
+      "id": ".xmega-cd",
+      "name": "AVR XMEGA-C/D family common values"
+    },
+    {
+      "id": ".xmega-e",
+      "name": "AVR XMEGA-E family common values"
+    },
+    {
+      "id": ".xmega-ab",
+      "name": "AVR XMEGA-A/B family common values"
+    },
+    {
+      "id": "x16a4u",
+      "name": "ATxmega16A4U",
+      "signature": "0x1e 0x94 0x41"
+    },
+    {
+      "id": "x16c4",
+      "name": "ATxmega16C4",
+      "signature": "0x1e 0x94 0x43"
+    },
+    {
+      "id": "x16d4",
+      "name": "ATxmega16D4",
+      "signature": "0x1e 0x94 0x42"
+    },
+    {
+      "id": "x16a4",
+      "name": "ATxmega16A4",
+      "signature": "0x1e 0x94 0x41"
+    },
+    {
+      "id": "x32a4u",
+      "name": "ATxmega32A4U",
+      "signature": "0x1e 0x95 0x41"
+    },
+    {
+      "id": "x32c4",
+      "name": "ATxmega32C4",
+      "signature": "0x1e 0x95 0x44"
+    },
+    {
+      "id": "x32d4",
+      "name": "ATxmega32D4",
+      "signature": "0x1e 0x95 0x42"
+    },
+    {
+      "id": "x32a4",
+      "name": "ATxmega32A4",
+      "signature": "0x1e 0x95 0x41"
+    },
+    {
+      "id": "x64a4u",
+      "name": "ATxmega64A4U",
+      "signature": "0x1e 0x96 0x46"
+    },
+    {
+      "id": "x32c3",
+      "name": "ATxmega32C3",
+      "signature": "0x1e 0x95 0x49"
+    },
+    {
+      "id": "x32d3",
+      "name": "ATxmega32D3",
+      "signature": "0x1e 0x95 0x4a"
+    },
+    {
+      "id": "x64c3",
+      "name": "ATxmega64C3",
+      "signature": "0x1e 0x96 0x49"
+    },
+    {
+      "id": "x64d3",
+      "name": "ATxmega64D3",
+      "signature": "0x1e 0x96 0x4a"
+    },
+    {
+      "id": "x64d4",
+      "name": "ATxmega64D4",
+      "signature": "0x1e 0x96 0x47"
+    },
+    {
+      "id": "x64a1",
+      "name": "ATxmega64A1",
+      "signature": "0x1e 0x96 0x4e"
+    },
+    {
+      "id": "x64a1u",
+      "name": "ATxmega64A1U",
+      "signature": "0x1e 0x96 0x4e"
+    },
+    {
+      "id": "x64a3",
+      "name": "ATxmega64A3",
+      "signature": "0x1e 0x96 0x42"
+    },
+    {
+      "id": "x64a3u",
+      "name": "ATxmega64A3U",
+      "signature": "0x1e 0x96 0x42"
+    },
+    {
+      "id": "x64a4",
+      "name": "ATxmega64A4",
+      "signature": "0x1e 0x96 0x46"
+    },
+    {
+      "id": "x64b1",
+      "name": "ATxmega64B1",
+      "signature": "0x1e 0x96 0x52"
+    },
+    {
+      "id": "x64b3",
+      "name": "ATxmega64B3",
+      "signature": "0x1e 0x96 0x51"
+    },
+    {
+      "id": "x128c3",
+      "name": "ATxmega128C3",
+      "signature": "0x1e 0x97 0x52"
+    },
+    {
+      "id": "x128d3",
+      "name": "ATxmega128D3",
+      "signature": "0x1e 0x97 0x48"
+    },
+    {
+      "id": "x128d4",
+      "name": "ATxmega128D4",
+      "signature": "0x1e 0x97 0x47"
+    },
+    {
+      "id": "x128a1",
+      "name": "ATxmega128A1",
+      "signature": "0x1e 0x97 0x4c"
+    },
+    {
+      "id": "x128a1d",
+      "name": "ATxmega128A1revD",
+      "signature": "0x1e 0x97 0x41"
+    },
+    {
+      "id": "x128a1u",
+      "name": "ATxmega128A1U",
+      "signature": "0x1e 0x97 0x4c"
+    },
+    {
+      "id": "x128a3",
+      "name": "ATxmega128A3",
+      "signature": "0x1e 0x97 0x42"
+    },
+    {
+      "id": "x128a3u",
+      "name": "ATxmega128A3U",
+      "signature": "0x1e 0x97 0x42"
+    },
+    {
+      "id": "x128a4",
+      "name": "ATxmega128A4",
+      "signature": "0x1e 0x97 0x46"
+    },
+    {
+      "id": "x128a4u",
+      "name": "ATxmega128A4U",
+      "signature": "0x1e 0x97 0x46"
+    },
+    {
+      "id": "x128b1",
+      "name": "ATxmega128B1",
+      "signature": "0x1e 0x97 0x4d"
+    },
+    {
+      "id": "x128b3",
+      "name": "ATxmega128B3",
+      "signature": "0x1e 0x97 0x4b"
+    },
+    {
+      "id": "x192c3",
+      "name": "ATxmega192C3",
+      "signature": "0x1e 0x97 0x51"
+    },
+    {
+      "id": "x192d3",
+      "name": "ATxmega192D3",
+      "signature": "0x1e 0x97 0x49"
+    },
+    {
+      "id": "x192a1",
+      "name": "ATxmega192A1",
+      "signature": "0x1e 0x97 0x4e"
+    },
+    {
+      "id": "x192a3",
+      "name": "ATxmega192A3",
+      "signature": "0x1e 0x97 0x44"
+    },
+    {
+      "id": "x192a3u",
+      "name": "ATxmega192A3U",
+      "signature": "0x1e 0x97 0x44"
+    },
+    {
+      "id": "x256c3",
+      "name": "ATxmega256C3",
+      "signature": "0x1e 0x98 0x46"
+    },
+    {
+      "id": "x256d3",
+      "name": "ATxmega256D3",
+      "signature": "0x1e 0x98 0x44"
+    },
+    {
+      "id": "x256a1",
+      "name": "ATxmega256A1",
+      "signature": "0x1e 0x98 0x46"
+    },
+    {
+      "id": "x256a3",
+      "name": "ATxmega256A3",
+      "signature": "0x1e 0x98 0x42"
+    },
+    {
+      "id": "x256a3u",
+      "name": "ATxmega256A3U",
+      "signature": "0x1e 0x98 0x42"
+    },
+    {
+      "id": "x256a3b",
+      "name": "ATxmega256A3B",
+      "signature": "0x1e 0x98 0x43"
+    },
+    {
+      "id": "x256a3bu",
+      "name": "ATxmega256A3BU",
+      "signature": "0x1e 0x98 0x43"
+    },
+    {
+      "id": "x384c3",
+      "name": "ATxmega384C3",
+      "signature": "0x1e 0x98 0x45"
+    },
+    {
+      "id": "x384d3",
+      "name": "ATxmega384D3",
+      "signature": "0x1e 0x98 0x47"
+    },
+    {
+      "id": "x8e5",
+      "name": "ATxmega8E5",
+      "signature": "0x1e 0x93 0x41"
+    },
+    {
+      "id": "x16e5",
+      "name": "ATxmega16E5",
+      "signature": "0x1e 0x94 0x45"
+    },
+    {
+      "id": "x32e5",
+      "name": "ATxmega32E5",
+      "signature": "0x1e 0x95 0x4c"
+    },
+    {
+      "id": "uc3a0512",
+      "name": "AT32UC3A0512",
+      "signature": "0xed 0xc0 0x3f"
+    },
+    {
+      "id": ".avr8x",
+      "name": "AVR8X family common values"
+    },
+    {
+      "id": ".avr8x_tiny",
+      "name": "AVR8X tiny family common values"
+    },
+    {
+      "id": ".avr8x_mega",
+      "name": "AVR8X mega family common values"
+    },
+    {
+      "id": "t202",
+      "name": "ATtiny202",
+      "signature": "0x1e 0x91 0x23"
+    },
+    {
+      "id": "t204",
+      "name": "ATtiny204",
+      "signature": "0x1e 0x91 0x22"
+    },
+    {
+      "id": "t402",
+      "name": "ATtiny402",
+      "signature": "0x1e 0x92 0x27"
+    },
+    {
+      "id": "t404",
+      "name": "ATtiny404",
+      "signature": "0x1e 0x92 0x26"
+    },
+    {
+      "id": "t406",
+      "name": "ATtiny406",
+      "signature": "0x1e 0x92 0x25"
+    },
+    {
+      "id": "t804",
+      "name": "ATtiny804",
+      "signature": "0x1e 0x93 0x25"
+    },
+    {
+      "id": "t806",
+      "name": "ATtiny806",
+      "signature": "0x1e 0x93 0x24"
+    },
+    {
+      "id": "t807",
+      "name": "ATtiny807",
+      "signature": "0x1e 0x93 0x23"
+    },
+    {
+      "id": "t1604",
+      "name": "ATtiny1604",
+      "signature": "0x1e 0x94 0x25"
+    },
+    {
+      "id": "t1606",
+      "name": "ATtiny1606",
+      "signature": "0x1e 0x94 0x24"
+    },
+    {
+      "id": "t1607",
+      "name": "ATtiny1607",
+      "signature": "0x1e 0x94 0x23"
+    },
+    {
+      "id": "t212",
+      "name": "ATtiny212",
+      "signature": "0x1e 0x91 0x21"
+    },
+    {
+      "id": "t214",
+      "name": "ATtiny214",
+      "signature": "0x1e 0x91 0x20"
+    },
+    {
+      "id": "t412",
+      "name": "ATtiny412",
+      "signature": "0x1e 0x92 0x23"
+    },
+    {
+      "id": "t414",
+      "name": "ATtiny414",
+      "signature": "0x1e 0x92 0x22"
+    },
+    {
+      "id": "t416",
+      "name": "ATtiny416",
+      "signature": "0x1e 0x92 0x21"
+    },
+    {
+      "id": "t416auto",
+      "name": "ATtiny416auto",
+      "signature": "0x1e 0x92 0x28"
+    },
+    {
+      "id": "t417",
+      "name": "ATtiny417",
+      "signature": "0x1e 0x92 0x20"
+    },
+    {
+      "id": "t814",
+      "name": "ATtiny814",
+      "signature": "0x1e 0x93 0x22"
+    },
+    {
+      "id": "t816",
+      "name": "ATtiny816",
+      "signature": "0x1e 0x93 0x21"
+    },
+    {
+      "id": "t817",
+      "name": "ATtiny817",
+      "signature": "0x1e 0x93 0x20"
+    },
+    {
+      "id": "t1614",
+      "name": "ATtiny1614",
+      "signature": "0x1e 0x94 0x22"
+    },
+    {
+      "id": "t1616",
+      "name": "ATtiny1616",
+      "signature": "0x1e 0x94 0x21"
+    },
+    {
+      "id": "t1617",
+      "name": "ATtiny1617",
+      "signature": "0x1e 0x94 0x20"
+    },
+    {
+      "id": "t3216",
+      "name": "ATtiny3216",
+      "signature": "0x1e 0x95 0x21"
+    },
+    {
+      "id": "t3217",
+      "name": "ATtiny3217",
+      "signature": "0x1e 0x95 0x22"
+    },
+    {
+      "id": "t424",
+      "name": "ATtiny424",
+      "signature": "0x1e 0x92 0x2c"
+    },
+    {
+      "id": "t426",
+      "name": "ATtiny426",
+      "signature": "0x1e 0x92 0x2b"
+    },
+    {
+      "id": "t427",
+      "name": "ATtiny427",
+      "signature": "0x1e 0x92 0x2a"
+    },
+    {
+      "id": "t824",
+      "name": "ATtiny824",
+      "signature": "0x1e 0x93 0x29"
+    },
+    {
+      "id": "t826",
+      "name": "ATtiny826",
+      "signature": "0x1e 0x93 0x28"
+    },
+    {
+      "id": "t827",
+      "name": "ATtiny827",
+      "signature": "0x1e 0x93 0x27"
+    },
+    {
+      "id": "t1624",
+      "name": "ATtiny1624",
+      "signature": "0x1e 0x94 0x2a"
+    },
+    {
+      "id": "t1626",
+      "name": "ATtiny1626",
+      "signature": "0x1e 0x94 0x29"
+    },
+    {
+      "id": "t1627",
+      "name": "ATtiny1627",
+      "signature": "0x1e 0x94 0x28"
+    },
+    {
+      "id": "t3224",
+      "name": "ATtiny3224",
+      "signature": "0x1e 0x95 0x28"
+    },
+    {
+      "id": "t3226",
+      "name": "ATtiny3226",
+      "signature": "0x1e 0x95 0x27"
+    },
+    {
+      "id": "t3227",
+      "name": "ATtiny3227",
+      "signature": "0x1e 0x95 0x26"
+    },
+    {
+      "id": "m808",
+      "name": "ATmega808",
+      "signature": "0x1e 0x93 0x26"
+    },
+    {
+      "id": "m809",
+      "name": "ATmega809",
+      "signature": "0x1e 0x93 0x2a"
+    },
+    {
+      "id": "m1608",
+      "name": "ATmega1608",
+      "signature": "0x1e 0x94 0x27"
+    },
+    {
+      "id": "m1609",
+      "name": "ATmega1609",
+      "signature": "0x1e 0x94 0x26"
+    },
+    {
+      "id": "m3208",
+      "name": "ATmega3208",
+      "signature": "0x1e 0x95 0x30"
+    },
+    {
+      "id": "m3209",
+      "name": "ATmega3209",
+      "signature": "0x1e 0x95 0x31"
+    },
+    {
+      "id": "m4808",
+      "name": "ATmega4808",
+      "signature": "0x1e 0x96 0x50"
+    },
+    {
+      "id": "m4809",
+      "name": "ATmega4809",
+      "signature": "0x1e 0x96 0x51"
+    },
+    {
+      "id": ".avr-da-db",
+      "name": "AVR-DA/DB family common values"
+    },
+    {
+      "id": "32da28",
+      "name": "AVR32DA28",
+      "signature": "0x1e 0x95 0x34"
+    },
+    {
+      "id": "32da32",
+      "name": "AVR32DA32",
+      "signature": "0x1e 0x95 0x33"
+    },
+    {
+      "id": "32da48",
+      "name": "AVR32DA48",
+      "signature": "0x1e 0x95 0x32"
+    },
+    {
+      "id": "64da28",
+      "name": "AVR64DA28",
+      "signature": "0x1e 0x96 0x15"
+    },
+    {
+      "id": "64da32",
+      "name": "AVR64DA32",
+      "signature": "0x1e 0x96 0x14"
+    },
+    {
+      "id": "64da48",
+      "name": "AVR64DA48",
+      "signature": "0x1e 0x96 0x13"
+    },
+    {
+      "id": "64da64",
+      "name": "AVR64DA64",
+      "signature": "0x1e 0x96 0x12"
+    },
+    {
+      "id": "128da28",
+      "name": "AVR128DA28",
+      "signature": "0x1e 0x97 0x0a"
+    },
+    {
+      "id": "128da32",
+      "name": "AVR128DA32",
+      "signature": "0x1e 0x97 0x09"
+    },
+    {
+      "id": "128da48",
+      "name": "AVR128DA48",
+      "signature": "0x1e 0x97 0x08"
+    },
+    {
+      "id": "128da64",
+      "name": "AVR128DA64",
+      "signature": "0x1e 0x97 0x07"
+    },
+    {
+      "id": "32da28s",
+      "name": "AVR32DA28S",
+      "signature": "0x1e 0x95 0x72"
+    },
+    {
+      "id": "32da32s",
+      "name": "AVR32DA32S",
+      "signature": "0x1e 0x95 0x71"
+    },
+    {
+      "id": "32da48s",
+      "name": "AVR32DA48S",
+      "signature": "0x1e 0x95 0x70"
+    },
+    {
+      "id": "64da28s",
+      "name": "AVR64DA28S",
+      "signature": "0x1e 0x96 0x2e"
+    },
+    {
+      "id": "64da32s",
+      "name": "AVR64DA32S",
+      "signature": "0x1e 0x96 0x2d"
+    },
+    {
+      "id": "64da48s",
+      "name": "AVR64DA48S",
+      "signature": "0x1e 0x96 0x2c"
+    },
+    {
+      "id": "64da64s",
+      "name": "AVR64DA64S",
+      "signature": "0x1e 0x96 0x2b"
+    },
+    {
+      "id": "128da28s",
+      "name": "AVR128DA28S",
+      "signature": "0x1e 0x97 0x12"
+    },
+    {
+      "id": "128da32s",
+      "name": "AVR128DA32S",
+      "signature": "0x1e 0x97 0x11"
+    },
+    {
+      "id": "128da48s",
+      "name": "AVR128DA48S",
+      "signature": "0x1e 0x97 0x10"
+    },
+    {
+      "id": "128da64s",
+      "name": "AVR128DA64S",
+      "signature": "0x1e 0x97 0x0f"
+    },
+    {
+      "id": "32db28",
+      "name": "AVR32DB28",
+      "signature": "0x1e 0x95 0x37"
+    },
+    {
+      "id": "32db32",
+      "name": "AVR32DB32",
+      "signature": "0x1e 0x95 0x36"
+    },
+    {
+      "id": "32db48",
+      "name": "AVR32DB48",
+      "signature": "0x1e 0x95 0x35"
+    },
+    {
+      "id": "64db28",
+      "name": "AVR64DB28",
+      "signature": "0x1e 0x96 0x19"
+    },
+    {
+      "id": "64db32",
+      "name": "AVR64DB32",
+      "signature": "0x1e 0x96 0x18"
+    },
+    {
+      "id": "64db48",
+      "name": "AVR64DB48",
+      "signature": "0x1e 0x96 0x17"
+    },
+    {
+      "id": "64db64",
+      "name": "AVR64DB64",
+      "signature": "0x1e 0x96 0x16"
+    },
+    {
+      "id": "128db28",
+      "name": "AVR128DB28",
+      "signature": "0x1e 0x97 0x0e"
+    },
+    {
+      "id": "128db32",
+      "name": "AVR128DB32",
+      "signature": "0x1e 0x97 0x0d"
+    },
+    {
+      "id": "128db48",
+      "name": "AVR128DB48",
+      "signature": "0x1e 0x97 0x0c"
+    },
+    {
+      "id": "128db64",
+      "name": "AVR128DB64",
+      "signature": "0x1e 0x97 0x0b"
+    },
+    {
+      "id": ".avr-dd-du",
+      "name": "AVR-DD/DU family common values"
+    },
+    {
+      "id": "16dd14",
+      "name": "AVR16DD14",
+      "signature": "0x1e 0x94 0x34"
+    },
+    {
+      "id": "16dd20",
+      "name": "AVR16DD20",
+      "signature": "0x1e 0x94 0x33"
+    },
+    {
+      "id": "16dd28",
+      "name": "AVR16DD28",
+      "signature": "0x1e 0x94 0x32"
+    },
+    {
+      "id": "16dd32",
+      "name": "AVR16DD32",
+      "signature": "0x1e 0x94 0x31"
+    },
+    {
+      "id": "32dd14",
+      "name": "AVR32DD14",
+      "signature": "0x1e 0x95 0x3b"
+    },
+    {
+      "id": "32dd20",
+      "name": "AVR32DD20",
+      "signature": "0x1e 0x95 0x3a"
+    },
+    {
+      "id": "32dd28",
+      "name": "AVR32DD28",
+      "signature": "0x1e 0x95 0x39"
+    },
+    {
+      "id": "32dd32",
+      "name": "AVR32DD32",
+      "signature": "0x1e 0x95 0x38"
+    },
+    {
+      "id": "64dd14",
+      "name": "AVR64DD14",
+      "signature": "0x1e 0x96 0x1d"
+    },
+    {
+      "id": "64dd20",
+      "name": "AVR64DD20",
+      "signature": "0x1e 0x96 0x1c"
+    },
+    {
+      "id": "64dd28",
+      "name": "AVR64DD28",
+      "signature": "0x1e 0x96 0x1b"
+    },
+    {
+      "id": "64dd32",
+      "name": "AVR64DD32",
+      "signature": "0x1e 0x96 0x1a"
+    },
+    {
+      "id": "64du28",
+      "name": "AVR64DU28",
+      "signature": "0x1e 0x96 0x22"
+    },
+    {
+      "id": "64du32",
+      "name": "AVR64DU32",
+      "signature": "0x1e 0x96 0x21"
+    },
+    {
+      "id": "16du14",
+      "name": "AVR16DU14",
+      "signature": "0x1e 0x94 0x3b"
+    },
+    {
+      "id": "16du20",
+      "name": "AVR16DU20",
+      "signature": "0x1e 0x94 0x3a"
+    },
+    {
+      "id": "16du28",
+      "name": "AVR16DU28",
+      "signature": "0x1e 0x94 0x39"
+    },
+    {
+      "id": "16du32",
+      "name": "AVR16DU32",
+      "signature": "0x1e 0x94 0x38"
+    },
+    {
+      "id": "32du14",
+      "name": "AVR32DU14",
+      "signature": "0x1e 0x95 0x4f"
+    },
+    {
+      "id": "32du20",
+      "name": "AVR32DU20",
+      "signature": "0x1e 0x95 0x4e"
+    },
+    {
+      "id": "32du28",
+      "name": "AVR32DU28",
+      "signature": "0x1e 0x95 0x40"
+    },
+    {
+      "id": "32du32",
+      "name": "AVR32DU32",
+      "signature": "0x1e 0x95 0x3f"
+    },
+    {
+      "id": ".avr-ex",
+      "name": "AVR-Ex family common values"
+    },
+    {
+      "id": "8ea28",
+      "name": "AVR8EA28",
+      "signature": "0x1e 0x93 0x2c"
+    },
+    {
+      "id": "8ea32",
+      "name": "AVR8EA32",
+      "signature": "0x1e 0x93 0x2b"
+    },
+    {
+      "id": "16ea28",
+      "name": "AVR16EA28",
+      "signature": "0x1e 0x94 0x37"
+    },
+    {
+      "id": "16ea32",
+      "name": "AVR16EA32",
+      "signature": "0x1e 0x94 0x36"
+    },
+    {
+      "id": "16ea48",
+      "name": "AVR16EA48",
+      "signature": "0x1e 0x94 0x35"
+    },
+    {
+      "id": "32ea28",
+      "name": "AVR32EA28",
+      "signature": "0x1e 0x95 0x3e"
+    },
+    {
+      "id": "32ea32",
+      "name": "AVR32EA32",
+      "signature": "0x1e 0x95 0x3d"
+    },
+    {
+      "id": "32ea48",
+      "name": "AVR32EA48",
+      "signature": "0x1e 0x95 0x3c"
+    },
+    {
+      "id": "64ea28",
+      "name": "AVR64EA28",
+      "signature": "0x1e 0x96 0x20"
+    },
+    {
+      "id": "64ea32",
+      "name": "AVR64EA32",
+      "signature": "0x1e 0x96 0x1f"
+    },
+    {
+      "id": "64ea48",
+      "name": "AVR64EA48",
+      "signature": "0x1e 0x96 0x1e"
+    },
+    {
+      "id": "16eb14",
+      "name": "AVR16EB14",
+      "signature": "0x1e 0x94 0x49"
+    },
+    {
+      "id": "16eb20",
+      "name": "AVR16EB20",
+      "signature": "0x1e 0x94 0x40"
+    },
+    {
+      "id": "16eb28",
+      "name": "AVR16EB28",
+      "signature": "0x1e 0x94 0x3f"
+    },
+    {
+      "id": "16eb32",
+      "name": "AVR16EB32",
+      "signature": "0x1e 0x94 0x3e"
+    },
+    {
+      "id": "32eb14",
+      "name": "AVR32EB14",
+      "signature": "0x1e 0x95 0x2d"
+    },
+    {
+      "id": "32eb20",
+      "name": "AVR32EB20",
+      "signature": "0x1e 0x95 0x2c"
+    },
+    {
+      "id": "32eb28",
+      "name": "AVR32EB28",
+      "signature": "0x1e 0x95 0x2b"
+    },
+    {
+      "id": "32eb32",
+      "name": "AVR32EB32",
+      "signature": "0x1e 0x95 0x2a"
+    },
+    {
+      "id": ".avr-sx",
+      "name": "AVR-Sx family common values"
+    },
+    {
+      "id": "32sd20",
+      "name": "AVR32SD20",
+      "signature": "0x1e 0x95 0x54"
+    },
+    {
+      "id": "32sd28",
+      "name": "AVR32SD28",
+      "signature": "0x1e 0x95 0x53"
+    },
+    {
+      "id": "32sd32",
+      "name": "AVR32SD32",
+      "signature": "0x1e 0x95 0x52"
+    }
+  ]
+}
