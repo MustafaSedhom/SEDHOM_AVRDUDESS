@@ -39,25 +39,19 @@ class _EepromWidgetState extends State<EepromWidget> {
       icon: AppIcons.eeprom_icon,
       file_name: eeprom_file_from_user != null
           ? eeprom_file_from_user!.files.single.name
-          : "No file chosen",
+          : "choose .eep file",
       ontap: () async {
-        // Sedhom_show_dialog(
-        //   context: context,
-        //   title: "EEPROM File",
-        //   icon: AppIcons.eeprom_icon,
-        //   items: files.eeprom_file_name,
-        //   onItemTap: (index) {
-        //     setState(() {
-        //       files_index = index;
-        //     });
-        //   },
-        // );
-        // FilePickerDemo();
-        // eeprom_file_from_user = await FilePicker.platform.pickFiles(
-        //   allowMultiple: false,
-        //   type: FileType.custom,
-        //   allowedExtensions: ['eep'],
-        // );
+        final result = await FilePicker.platform.pickFiles(
+          allowMultiple: false,
+          type: FileType.custom,
+          allowedExtensions: ['eep'],
+        );
+
+        if (result != null) {
+          setState(() {
+            eeprom_file_from_user = result;
+          });
+        }
       },
       short_cut_or_not: false,
       choose: AppIcons.upload_icon,

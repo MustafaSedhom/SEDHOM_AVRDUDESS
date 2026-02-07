@@ -1,5 +1,4 @@
 import 'dart:io' show Platform;
-
 import 'package:flutter/material.dart';
 import 'package:sedhom_redesgin_avrdude/screens/Home_screen.dart';
 import 'package:window_size/window_size.dart';

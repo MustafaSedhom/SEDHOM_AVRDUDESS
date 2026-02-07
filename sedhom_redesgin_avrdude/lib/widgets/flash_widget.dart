@@ -1,3 +1,4 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -28,6 +29,7 @@ class _FlashWidgetState extends State<FlashWidget> {
     "Write": false,
     "Verify": false,
   };
+  FilePickerResult? flash_file_from_user;
   int files_index = 0;
   int format_index = 0;
   @override
@@ -35,19 +37,21 @@ class _FlashWidgetState extends State<FlashWidget> {
     return BasicWidget(
       title: "Flash",
       icon: AppIcons.flash_icon,
-      file_name: files.flash_file_name[files_index],
-      ontap: () {
-        Sedhom_show_dialog(
-          context: context,
-          title: "Flash File",
-          icon: AppIcons.flash_icon,
-          items: files.flash_file_name,
-          onItemTap: (index) {
-            setState(() {
-              files_index = index;
-            });
-          },
+      file_name: flash_file_from_user != null
+          ? flash_file_from_user!.files.single.name
+          : "choose .Hex file",
+      ontap: () async {
+        final result = await FilePicker.platform.pickFiles(
+          allowMultiple: false,
+          type: FileType.custom,
+          allowedExtensions: ['Hex', 'hex'],
         );
+
+        if (result != null) {
+          setState(() {
+            flash_file_from_user = result;
+          });
+        }
       },
       short_cut_or_not: false,
       choose: AppIcons.upload_icon,

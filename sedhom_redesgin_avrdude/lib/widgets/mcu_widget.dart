@@ -59,7 +59,7 @@ class _McuWidgetState extends State<McuWidget> {
                 ),
                 Flexible(
                   child: Text(
-                    "Flash Size  ->",
+                    "Flash Size :",
                     style: TextStyle(
                       fontSize: 30,
                       color: APPColors.color_green,
@@ -91,7 +91,7 @@ class _McuWidgetState extends State<McuWidget> {
                 ),
                 Flexible(
                   child: Text(
-                    "EEPROM Size  ->",
+                    "EEPROM Size :",
                     style: TextStyle(
                       fontSize: 30,
                       color: APPColors.color_green,
