@@ -172,7 +172,10 @@ class _FlashWidgetState extends State<FlashWidget> {
                       ontap: () {
                         setState(() {
                           widget.onFlashOptionSelected?.call(
-                            files.flash_file_name[files_index],
+                            options.keys.firstWhere(
+                              (k) => options[k] == true,
+                              orElse: () => "none selected",
+                            ),
                           );
                           widget.read_write_verify_selected?.call(
                             options.keys.firstWhere(

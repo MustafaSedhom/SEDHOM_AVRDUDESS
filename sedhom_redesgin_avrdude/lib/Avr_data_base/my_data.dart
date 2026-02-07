@@ -151,23 +151,6 @@ class AVRData {
   ];
 }
 
-class files {
-  static List<String> flash_file_name = [
-    "Blinking_Led.hex",
-    "Lcd_1602.hex",
-    "Key_Pad_4*4.hex",
-    "TFT_LCD_3.5_Inch.hex",
-    "7_Segment.hex",
-  ];
-  static List<String> eeprom_file_name = [
-    "Blinking_Led.eep",
-    "Lcd_1602.eep",
-    "Key_Pad_4*4.eep",
-    "TFT_LCD_3.5_Inch.eep",
-    "7_Segment.eep",
-  ];
-}
-
 class progrmers {
   static List<String> programers_name = [
     "USB asp to TTL converter",
@@ -205,7 +188,7 @@ class BuadRates {
 
 class speedOptions {
   static List<String> speed_options = [
-    "375 kHz",
+    "(Defualt)375 kHz",
     "1.5 MHz",
     "3 MHz",
     "6 MHz",
